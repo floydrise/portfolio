@@ -4,9 +4,15 @@ import Navbar from "@/components/Navbar";
 import { TypewriterEffect } from "@/components/ui/typewriter-effect";
 import { TracingBeam } from "@/components/ui/tracing-beam";
 import { twMerge } from "tailwind-merge";
-import { EvervaultCard, Icon } from "@/components/ui/evervault-card";
-import { FaReact } from "react-icons/fa";
+import {
+  TbBrandTypescript,
+  TbBrandNextjs,
+  TbBrandReact,
+  TbBrandTailwind,
+} from "react-icons/tb";
 import SkillCard from "@/components/SkillCard";
+import { BiLogoPostgresql } from "react-icons/bi";
+import { SiExpress } from "react-icons/si";
 
 export default function Home() {
   const words = [
@@ -65,14 +71,42 @@ export default function Home() {
     },
   ];
 
+  const skillCards = [
+    {
+      skill: "TypeScript",
+      icon: <TbBrandTypescript />
+    },
+    {
+      skill: "Next.js",
+      icon: <TbBrandNextjs />,
+    },
+    {
+      skill: "React",
+      icon: <TbBrandReact />
+    },
+    {
+      skill: "Tailwind",
+      icon: <TbBrandTailwind />,
+    },
+    {
+      skill: "Express",
+      icon: <SiExpress />
+    },
+    {
+      skill: "PostgreSQL",
+      icon: <BiLogoPostgresql />
+    }
+  ]
+
   return (
     <main>
       <Navbar className="top-2 px-2" />
+      {/* Home */}
       <div
         id={"home"}
-        className="h-screen shadow-2xl shadow-indigo-50 relative w-full overflow-hidden dark:bg-black bg-white flex flex-col items-center justify-center"
+        className="h-screen shadow-2xl shadow-violet-300 dark:shadow-lime-200 rounded-b-xl relative w-full overflow-hidden dark:bg-black bg-white flex flex-col items-center justify-center"
       >
-        <div className="absolute inset-0 w-full h-full bg-indigo-50 dark:bg-indigo-950 z-20 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
+        <div className="absolute inset-0 w-full h-full bg-indigo-100 dark:bg-indigo-950 z-20 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
         <Boxes />
         <div className="relative z-20 flex flex-col items-center justify-center h-[30rem] mt-40">
           <p className="text-neutral-900 text-center dark:text-neutral-200 text-sm md:text-base mb-10">
@@ -133,8 +167,14 @@ export default function Home() {
           Skills
         </h1>
       </div>
-      <div>
-        <SkillCard skill={"React"} icon={<FaReact />} />
+      <div
+        className={
+          "grid grid-cols-1 gap-6 mx-auto max-w-5xl py-10 md:grid-cols-2 lg:grid-cols-3"
+        }
+      >
+        {skillCards.map((data, index) => (
+            <SkillCard key={index} skill={data.skill} icon={data.icon}/>
+        ))}
       </div>
     </main>
   );
