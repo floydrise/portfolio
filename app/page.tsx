@@ -3,7 +3,10 @@ import { Boxes } from "@/components/ui/background-boxes";
 import Navbar from "@/components/Navbar";
 import { TypewriterEffect } from "@/components/ui/typewriter-effect";
 import { TracingBeam } from "@/components/ui/tracing-beam";
-import {twMerge} from "tailwind-merge";
+import { twMerge } from "tailwind-merge";
+import { EvervaultCard, Icon } from "@/components/ui/evervault-card";
+import { FaReact } from "react-icons/fa";
+import SkillCard from "@/components/SkillCard";
 
 export default function Home() {
   const words = [
@@ -24,82 +27,41 @@ export default function Home() {
 
   const dummyContent = [
     {
-      title: "Lorem Ipsum Dolor Sit Amet",
-      description: (
-        <>
-          <p>
-            Sit duis est minim proident non nisi velit non consectetur. Esse
-            adipisicing laboris consectetur enim ipsum reprehenderit eu deserunt
-            Lorem ut aliqua anim do. Duis cupidatat qui irure cupidatat
-            incididunt incididunt enim magna id est qui sunt fugiat. Laboris do
-            duis pariatur fugiat Lorem aute sit ullamco. Qui deserunt non
-            reprehenderit dolore nisi velit exercitation Lorem qui do enim
-            culpa. Aliqua eiusmod in occaecat reprehenderit laborum nostrud
-            fugiat voluptate do Lorem culpa officia sint labore. Tempor
-            consectetur excepteur ut fugiat veniam commodo et labore dolore
-            commodo pariatur.
-          </p>
-          <p>
-            Dolor minim irure ut Lorem proident. Ipsum do pariatur est ad ad
-            veniam in commodo id reprehenderit adipisicing. Proident duis
-            exercitation ad quis ex cupidatat cupidatat occaecat adipisicing.
-          </p>
-          <p>
-            Tempor quis dolor veniam quis dolor. Sit reprehenderit eiusmod
-            reprehenderit deserunt amet laborum consequat adipisicing officia
-            qui irure id sint adipisicing. Adipisicing fugiat aliqua nulla
-            nostrud. Amet culpa officia aliquip deserunt veniam deserunt officia
-            adipisicing aliquip proident officia sunt.
-          </p>
-        </>
-      ),
-      badge: "React",
-      image:
-        "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=3540&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      badge: "Northcoders, UK",
+      title: "Trainee Software Developer",
+      dates: "Oct 2024 - Jan 2025",
+      description: [
+        "13 week programming bootcamp, learning the fundamentals necessary for front\n" +
+          "end and back end development, testing and hosting.",
+        "Collaborated with colleagues on developing projects, utilising Test Driven\n" +
+          "Development and pair programming.",
+      ],
     },
     {
-      title: "Lorem Ipsum Dolor Sit Amet",
-      description: (
-        <>
-          <p>
-            Ex irure dolore veniam ex velit non aute nisi labore ipsum occaecat
-            deserunt cupidatat aute. Enim cillum dolor et nulla sunt
-            exercitation non voluptate qui aliquip esse tempor. Ullamco ut sunt
-            consectetur sint qui qui do do qui do. Labore laborum culpa magna
-            reprehenderit ea velit id esse adipisicing deserunt amet dolore.
-            Ipsum occaecat veniam commodo proident aliqua id ad deserunt dolor
-            aliquip duis veniam sunt.
-          </p>
-          <p>
-            In dolore veniam excepteur eu est et sunt velit. Ipsum sint esse
-            veniam fugiat esse qui sint ad sunt reprehenderit do qui proident
-            reprehenderit. Laborum exercitation aliqua reprehenderit ea sint
-            cillum ut mollit.
-          </p>
-        </>
-      ),
-      badge: "Changelog",
-      image:
-        "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&q=80&w=3540&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      badge: "Film and TV Extra, UK",
+      title: "Supporting artist",
+      dates: "Jun 2021 - August 2024",
+      description: [
+        "Play non-speaking roles in film and television productions.",
+        "Appear in the background of scenes to create a realistic environment, such as crowd members, diners in a restaurant, or passersby on a busy street.",
+      ],
     },
     {
-      title: "Lorem Ipsum Dolor Sit Amet",
-      description: (
-        <>
-          <p>
-            Ex irure dolore veniam ex velit non aute nisi labore ipsum occaecat
-            deserunt cupidatat aute. Enim cillum dolor et nulla sunt
-            exercitation non voluptate qui aliquip esse tempor. Ullamco ut sunt
-            consectetur sint qui qui do do qui do. Labore laborum culpa magna
-            reprehenderit ea velit id esse adipisicing deserunt amet dolore.
-            Ipsum occaecat veniam commodo proident aliqua id ad deserunt dolor
-            aliquip duis veniam sunt.
-          </p>
-        </>
-      ),
-      badge: "Launch Week",
-      image:
-        "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&q=80&w=3506&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      badge: "BIMM University, UK",
+      title: "Certificate of Higher Education",
+      dates: "Oct 2018 - May 2020",
+      description: [
+        "Completed two years of studies, focusing on recording, performance and mixing and\n" +
+          "achieving a Certificate of Higher Education.",
+      ],
+    },
+    {
+      badge: "Mathematics and science high school, Bulgaria",
+      title: "High school diploma",
+      description: [
+        "Focused on mathematics and science, building a strong analytical and problem-\n" +
+          "solving foundation.",
+      ],
     },
   ];
 
@@ -108,7 +70,7 @@ export default function Home() {
       <Navbar className="top-2 px-2" />
       <div
         id={"home"}
-        className="h-screen relative w-full overflow-hidden dark:bg-black bg-white flex flex-col items-center justify-center"
+        className="h-screen shadow-2xl shadow-indigo-50 relative w-full overflow-hidden dark:bg-black bg-white flex flex-col items-center justify-center"
       >
         <div className="absolute inset-0 w-full h-full bg-indigo-50 dark:bg-indigo-950 z-20 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
         <Boxes />
@@ -127,34 +89,53 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className={"mx-auto max-w-6xl"}>
+      {/* Experience and education */}
+      <div className={"mx-auto max-w-5xl"}>
         <h1
           id={"experience"}
           className={
-            "px-8 md:px-0 pt-20 text-2xl font-bold dark:text-white md:pt-28 md:text-7xl"
+            "px-4 md:px-0 pt-20 text-2xl font-bold dark:text-white md:pt-28 md:text-7xl"
           }
         >
-          Experience
+          Experience / Education
         </h1>
       </div>
       <TracingBeam className="px-6">
         <div className="max-w-2xl mx-auto antialiased pt-4 relative">
           {dummyContent.map((item, index) => (
             <div key={`content-${index}`} className="mb-10">
-              <h2 className="bg-black text-white rounded-full text-sm w-fit px-4 py-1 mb-4">
+              <h2 className="bg-black text-white dark:bg-slate-200 dark:text-black rounded-full text-sm w-fit px-4 py-1 mb-2">
                 {item.badge}
               </h2>
-
-              <p className={twMerge( "text-xl mb-4")}>
-                {item.title}
-              </p>
+              <p className={twMerge("text-xl ml-2")}>{item.title}</p>
+              <p className={"mb-4 ml-2"}>{item.dates}</p>
               <div className="text-sm  prose prose-sm dark:prose-invert">
-                {item.description}
+                <ul className={"ml-6"}>
+                  {item.description.map((text, index) => (
+                    <li className={"list-disc"} key={index}>
+                      {text}
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           ))}
         </div>
       </TracingBeam>
+      {/* Skills */}
+      <div className={"mx-auto max-w-5xl"}>
+        <h1
+          id={"skills"}
+          className={
+            "px-4 md:px-0 pt-20 text-2xl font-bold dark:text-white md:pt-28 md:text-7xl"
+          }
+        >
+          Skills
+        </h1>
+      </div>
+      <div>
+        <SkillCard skill={"React"} icon={<FaReact />} />
+      </div>
     </main>
   );
 }

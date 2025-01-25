@@ -18,7 +18,7 @@ export default function Navbar({ className }: { className?: string }) {
           <div className="flex flex-col space-y-4 text-sm">
             <HoveredLink href="/#home">Home</HoveredLink>
             <HoveredLink href="/#experience">Experience</HoveredLink>
-            <HoveredLink href="">Skills</HoveredLink>
+            <HoveredLink href="/#skills">Skills</HoveredLink>
             <HoveredLink href="">Projects</HoveredLink>
             <HoveredLink href="">Contact me</HoveredLink>
           </div>
