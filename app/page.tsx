@@ -1,7 +1,4 @@
-"use client"
-
 import React from "react";
-import { Boxes } from "@/components/ui/background-boxes";
 import Navbar from "@/components/Navbar";
 import { TypewriterEffect } from "@/components/ui/typewriter-effect";
 import { TracingBeam } from "@/components/ui/tracing-beam";
@@ -15,6 +12,9 @@ import {
 import SkillCard from "@/components/SkillCard";
 import { BiLogoPostgresql } from "react-icons/bi";
 import { SiExpress } from "react-icons/si";
+import { Button } from "@/components/ui/moving-border";
+import { ArrowDownIcon } from "@heroicons/react/24/outline";
+import Link from "next/link";
 
 export default function Home() {
   const words = [
@@ -29,7 +29,7 @@ export default function Home() {
     },
     {
       text: "developer.",
-      className: "text-violet-500 dark:text-lime-400",
+      className: "text-violet-500 dark:text-blue-500",
     },
   ];
 
@@ -76,7 +76,7 @@ export default function Home() {
   const skillCards = [
     {
       skill: "TypeScript",
-      icon: <TbBrandTypescript />
+      icon: <TbBrandTypescript />,
     },
     {
       skill: "Next.js",
@@ -84,7 +84,7 @@ export default function Home() {
     },
     {
       skill: "React",
-      icon: <TbBrandReact />
+      icon: <TbBrandReact />,
     },
     {
       skill: "Tailwind",
@@ -92,24 +92,20 @@ export default function Home() {
     },
     {
       skill: "Express",
-      icon: <SiExpress />
+      icon: <SiExpress />,
     },
     {
       skill: "PostgreSQL",
-      icon: <BiLogoPostgresql />
-    }
-  ]
+      icon: <BiLogoPostgresql />,
+    },
+  ];
 
   return (
     <main>
       <Navbar className="top-2 px-2" />
       {/* Home */}
-      <div
-        id={"home"}
-        className="h-screen shadow-2xl shadow-violet-300 dark:shadow-lime-200 rounded-b-xl relative w-full overflow-hidden dark:bg-black bg-white flex flex-col items-center justify-center"
-      >
-        <div className="absolute inset-0 w-full h-full bg-indigo-100 dark:bg-indigo-950 z-20 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
-        <Boxes />
+      <div className="h-screen w-full dark:bg-black bg-white  dark:bg-dot-white/[0.4] bg-dot-black/[0.5] relative flex items-center justify-center">
+        <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
         <div className="relative z-20 flex flex-col items-center justify-center h-[30rem] mt-40">
           <p className="text-neutral-900 text-center dark:text-neutral-200 text-sm md:text-base mb-10">
             Hi 👋🏻, I am Stefan 👀, a junior full-stack web developer 💻
@@ -122,6 +118,16 @@ export default function Home() {
             <button className="w-40 h-10 rounded-md bg-white text-black border border-black  text-sm">
               Contact Me
             </button>
+          </div>
+          <div className={"mt-10"}>
+            <Link href={"/#experience"}>
+              <Button
+                borderRadius="1.75rem"
+                className="bg-slate-100 dark:bg-black text-black dark:text-white border-neutral-200 dark:border-slate-800"
+              >
+                <ArrowDownIcon className={"w-6"} />
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
@@ -175,7 +181,7 @@ export default function Home() {
         }
       >
         {skillCards.map((data, index) => (
-            <SkillCard key={index} skill={data.skill} icon={data.icon}/>
+          <SkillCard key={index} skill={data.skill} icon={data.icon} />
         ))}
       </div>
     </main>
