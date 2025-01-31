@@ -15,6 +15,7 @@ import { SiExpress } from "react-icons/si";
 import { Button } from "@/components/ui/moving-border";
 import { ArrowDownIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
+import {HeroParallax} from "@/components/ui/hero-parallax";
 
 export default function Home() {
   const words = [
@@ -98,6 +99,77 @@ export default function Home() {
       skill: "PostgreSQL",
       icon: <BiLogoPostgresql />,
     },
+  ];
+
+  const projects = [
+    {
+      title: "Grocery list",
+      link: "https://github.com/floydrise/grocery-list-react",
+      thumbnail:
+          "/groceryList.png",
+    },
+    {
+      title: "FitSpo",
+      link: "https://github.com/floydrise/fitspo-app",
+      thumbnail:
+          "/fitSpo.png",
+    },
+    {
+      title: "React News",
+      link: "https://github.com/floydrise/react-news",
+      thumbnail:
+          "/reactNews.png",
+    },
+
+    {
+      title: "Tic-Tac-Toe",
+      link: "https://github.com/floydrise/tic-tac-react",
+      thumbnail:
+          "/ticTacToe.png",
+    },
+    {
+      title: "News API",
+      link: "https://github.com/floydrise/News-REST-API",
+      thumbnail: "/newsApi.png",
+    },
+
+
+    {
+      title: "FitSpo",
+      link: "https://github.com/floydrise/fitspo-app",
+      thumbnail:
+          "/fitSpo.png",
+    },
+    {
+      title: "Odin Calculator",
+      link: "https://github.com/floydrise/odin-calculator",
+      thumbnail: "/calculator.png",
+    },
+    {
+      title: "Grocery list",
+      link: "https://github.com/floydrise/grocery-list-react",
+      thumbnail:
+          "/groceryList.png",
+    },
+    {
+      title: "News API",
+      link: "https://github.com/floydrise/News-REST-API",
+      thumbnail: "/newsApi.png",
+    },
+    {
+      title: "React News",
+      link: "https://github.com/floydrise/react-news",
+      thumbnail:
+          "/reactNews.png",
+    },
+    {
+      title: "Tic-Tac-Toe",
+      link: "https://github.com/floydrise/tic-tac-react",
+      thumbnail:
+          "/ticTacToe.png",
+    },
+
+
   ];
 
   return (
@@ -184,6 +256,7 @@ export default function Home() {
           <SkillCard key={index} skill={data.skill} icon={data.icon} />
         ))}
       </div>
+      <HeroParallax products={projects} />
     </main>
   );
 }
