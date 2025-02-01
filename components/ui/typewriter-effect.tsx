@@ -3,7 +3,7 @@
 import { cn } from "@/lib/utils";
 import { motion, stagger, useAnimate, useInView } from "framer-motion";
 import { useEffect } from "react";
-import { jerseyTen } from "@/lib/utils";
+
 
 export const TypewriterEffect = ({
   words,
@@ -55,7 +55,7 @@ export const TypewriterEffect = ({
                   initial={{}}
                   key={`char-${index}`}
                   className={cn(
-                    `dark:text-white ${jerseyTen.className} text-black opacity-0 hidden`,
+                    `dark:text-white text-black opacity-0 hidden`,
                     word.className,
                   )}
                 >
@@ -90,7 +90,7 @@ export const TypewriterEffect = ({
           repeatType: "reverse",
         }}
         className={cn(
-          "inline-block rounded-sm w-[4px] h-4 md:h-6 lg:h-10 bg-blue-500",
+          "inline-block rounded-sm w-[4px] h-4 md:h-6 lg:h-10 bg-violet-400",
           cursorClassName,
         )}
       ></motion.span>

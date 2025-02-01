@@ -15,10 +15,15 @@ import { SiExpress } from "react-icons/si";
 import { Button } from "@/components/ui/moving-border";
 import { ArrowDownIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
-import {HeroParallax} from "@/components/ui/hero-parallax";
+import { HeroParallax } from "@/components/ui/hero-parallax";
+import {BackgroundBeams} from "@/components/ui/background-beams";
+import {HoverBorderGradient} from "@/components/ui/hover-border-gradient";
 
 export default function Home() {
   const words = [
+    {
+      text: "Junior"
+    },
     {
       text: "TypeScript",
     },
@@ -30,7 +35,7 @@ export default function Home() {
     },
     {
       text: "developer.",
-      className: "text-violet-500 dark:text-blue-500",
+      className: "text-violet-500 dark:text-violet-400",
     },
   ];
 
@@ -105,27 +110,23 @@ export default function Home() {
     {
       title: "Grocery list",
       link: "https://github.com/floydrise/grocery-list-react",
-      thumbnail:
-          "/groceryList.png",
+      thumbnail: "/groceryList.png",
     },
     {
       title: "FitSpo",
       link: "https://github.com/floydrise/fitspo-app",
-      thumbnail:
-          "/fitSpo.png",
+      thumbnail: "/fitSpo.png",
     },
     {
       title: "React News",
       link: "https://github.com/floydrise/react-news",
-      thumbnail:
-          "/reactNews.png",
+      thumbnail: "/reactNews.png",
     },
 
     {
       title: "Tic-Tac-Toe",
       link: "https://github.com/floydrise/tic-tac-react",
-      thumbnail:
-          "/ticTacToe.png",
+      thumbnail: "/ticTacToe.png",
     },
     {
       title: "News API",
@@ -133,23 +134,20 @@ export default function Home() {
       thumbnail: "/newsApi.png",
     },
 
-
     {
-      title: "FitSpo",
-      link: "https://github.com/floydrise/fitspo-app",
-      thumbnail:
-          "/fitSpo.png",
+      title: "Tic-Tac-Toe",
+      link: "https://github.com/floydrise/tic-tac-react",
+      thumbnail: "/ticTacToe.png",
     },
     {
-      title: "Odin Calculator",
+      title: "VanillaJS Calculator",
       link: "https://github.com/floydrise/odin-calculator",
       thumbnail: "/calculator.png",
     },
     {
       title: "Grocery list",
       link: "https://github.com/floydrise/grocery-list-react",
-      thumbnail:
-          "/groceryList.png",
+      thumbnail: "/groceryList.png",
     },
     {
       title: "News API",
@@ -159,37 +157,45 @@ export default function Home() {
     {
       title: "React News",
       link: "https://github.com/floydrise/react-news",
-      thumbnail:
-          "/reactNews.png",
+      thumbnail: "/reactNews.png",
     },
     {
       title: "Tic-Tac-Toe",
       link: "https://github.com/floydrise/tic-tac-react",
-      thumbnail:
-          "/ticTacToe.png",
+      thumbnail: "/ticTacToe.png",
     },
-
-
   ];
 
   return (
     <main>
       <Navbar className="top-2 px-2" />
       {/* Home */}
-      <div className="h-screen w-full dark:bg-black bg-white  dark:bg-dot-white/[0.4] bg-dot-black/[0.5] relative flex items-center justify-center">
+      <div className="h-[50rem] w-full dark:bg-black bg-white  dark:bg-dot-white/[0.4] bg-dot-black/[0.4] relative flex items-center justify-center">
         <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
         <div className="relative z-20 flex flex-col items-center justify-center h-[30rem] mt-40">
-          <p className="text-neutral-900 text-center dark:text-neutral-200 text-sm md:text-base mb-10">
-            Hi 👋🏻, I am Stefan 👀, a junior full-stack web developer 💻
+          <p className="text-neutral-900 text-center dark:text-neutral-200 text-md md:text-lg mb-10">
+            Hi 👋🏻, I am Stefan️ 👀
           </p>
           <TypewriterEffect words={words} />
           <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 space-x-0 md:space-x-4 mt-10">
-            <button className="w-40 h-10 rounded-md bg-black border dark:border-white border-transparent text-white text-md">
-              Download CV
-            </button>
-            <button className="w-40 h-10 rounded-md bg-white text-black border border-black  text-sm">
-              Contact Me
-            </button>
+            <Link target={"_blank"} href={"https://drive.google.com/file/d/1X8bYm9hTbagyBvUqAwbYAACee-dgPPyT/view?usp=sharing"}>
+            <HoverBorderGradient
+                containerClassName="rounded-full"
+                as="button"
+                className="bg-black text-white w-40"
+              >
+                <span>Download CV</span>
+              </HoverBorderGradient>
+            </Link>
+            <Link href={"mailto:floydrise@gmail.com"}>
+              <HoverBorderGradient
+                  containerClassName="rounded-full"
+                  as="button"
+                  className="bg-indigo-50 w-40 text-black"
+              >
+                <span>Contact me</span>
+              </HoverBorderGradient>
+            </Link>
           </div>
           <div className={"mt-10"}>
             <Link href={"/#experience"}>
@@ -202,6 +208,7 @@ export default function Home() {
             </Link>
           </div>
         </div>
+        <BackgroundBeams />
       </div>
       {/* Experience and education */}
       <div className={"mx-auto max-w-5xl"}>

@@ -20,7 +20,6 @@ export default function Navbar({ className }: { className?: string }) {
             <HoveredLink href="/#experience">Experience</HoveredLink>
             <HoveredLink href="/#skills">Skills</HoveredLink>
             <HoveredLink href="/#projects">Projects</HoveredLink>
-            <HoveredLink href="">Contact me</HoveredLink>
           </div>
         </MenuItem>
         <MenuItem setActive={setActive} active={active} item="Socials">
