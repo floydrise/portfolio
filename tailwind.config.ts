@@ -13,8 +13,8 @@ export default {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: "class",
   theme: {
-    // your existing config
     extend: {
       animation: {
         "meteor-effect": "meteor 5s linear infinite",
