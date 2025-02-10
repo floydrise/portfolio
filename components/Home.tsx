@@ -9,9 +9,6 @@ import React from "react";
 export const Home = () => {
   const words = [
     {
-      text: "Junior",
-    },
-    {
       text: "TypeScript",
     },
     {
