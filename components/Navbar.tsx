@@ -9,6 +9,7 @@ import { MdEmail } from "react-icons/md";
 import {SunIcon, MoonIcon, BeakerIcon} from "@heroicons/react/24/outline";
 import {useTheme} from "next-themes";
 import {useTranslations} from "use-intl";
+import {GiBulgaria} from "react-icons/gi";
 
 export default function Navbar({ className }: { className?: string }) {
   const [active, setActive] = useState<string | null>(null);
@@ -79,6 +80,12 @@ export default function Navbar({ className }: { className?: string }) {
             >
               <BeakerIcon className={"w-4 text-green-500"} /> {t("system")}
             </button>
+          </div>
+        </MenuItem>
+        <MenuItem setActive={setActive} active={active} item={t("language")}>
+          <div className="flex flex-col space-y-4 text-sm">
+            <HoveredLink href="/en">🇬🇧 {t("english")}</HoveredLink>
+            <HoveredLink href="/bg">🇧🇬 {t("bulgarian")}</HoveredLink>
           </div>
         </MenuItem>
       </Menu>

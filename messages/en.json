@@ -1,6 +1,6 @@
 {
   "Navigation": {
-    "navigation": "Navigation",
+    "navigation": "Nav",
     "home": "Home",
     "experience": "Experience",
     "skills": "Skills",
@@ -10,6 +10,9 @@
     "theme": "Theme",
     "light": "Light",
     "dark": "Dark",
-    "system": "System"
+    "system": "System",
+    "language": "Lang",
+    "bulgarian": "Bulgarian",
+    "english": "English"
   }
 }
