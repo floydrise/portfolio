@@ -1,0 +1,15 @@
+{
+  "Navigation": {
+    "navigation": "Navigation",
+    "home": "Home",
+    "experience": "Experience",
+    "skills": "Skills",
+    "projects": "Projects",
+    "socials": "Socials",
+    "email": "Email",
+    "theme": "Theme",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  }
+}

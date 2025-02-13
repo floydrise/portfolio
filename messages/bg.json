@@ -1,0 +1,15 @@
+{
+  "Navigation": {
+    "navigation": "Навигация",
+    "home": "Начало",
+    "experience": "Опит",
+    "skills": "Умения",
+    "projects": "Проекти",
+    "socials": "Мрежи",
+    "email": "Имейл",
+    "theme": "Тема",
+    "light": "Светла",
+    "dark": "Тъмна",
+    "system": "Система"
+  }
+}
