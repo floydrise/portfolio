@@ -20,11 +20,11 @@ export const metadata: Metadata = {
 export default async function RootLayout({
   children,
   params,
-}: Readonly<{
+}: {
   children: React.ReactNode;
   params: { locale: "en" | "bg" };
-}>) {
-  // params =  params;
+}) {
+
   const { locale } = await params;
 
   if (!routing.locales.includes(locale)) {
