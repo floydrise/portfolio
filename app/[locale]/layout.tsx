@@ -17,21 +17,15 @@ export const metadata: Metadata = {
   description: "Full-stack TS developer",
 };
 
-export default async function RootLayout(
-  props: Readonly<{
-    children: React.ReactNode;
-    params: { locale: "en"|"bg" };
-  }>
-) {
-  const params = await props.params;
-
-  const {
-    locale
-  } = params;
-
-  const {
-    children
-  } = props;
+export default async function RootLayout({
+  children,
+  params,
+}: Readonly<{
+  children: React.ReactNode;
+  params: { locale: "en" | "bg" };
+}>) {
+  // params =  params;
+  const { locale } = await params;
 
   if (!routing.locales.includes(locale)) {
     notFound();
