@@ -5,23 +5,27 @@ import { Button } from "@/components/ui/moving-border";
 import { ArrowDownIcon } from "@heroicons/react/24/outline";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import React from "react";
+import {getTranslations} from "next-intl/server";
 
-export const Home = () => {
+export const Home = async () => {
+  const t = await getTranslations('Home');
+
   const words = [
     {
       text: "TypeScript",
     },
     {
-      text: "and",
+      text: `${t("and")}`,
     },
     {
       text: "React/Next.js",
     },
     {
-      text: "developer.",
+      text: `${t("developer")}`,
       className: "text-violet-500 dark:text-violet-400",
     },
   ];
+
 
   return (
     <>
@@ -29,7 +33,7 @@ export const Home = () => {
         <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
         <div className="relative z-20 flex flex-col items-center justify-center h-[30rem] mt-40">
           <p className="text-neutral-900 text-center dark:text-neutral-200 text-md md:text-lg mb-10">
-            Hi 👋🏻, I am Stefan️ 👀
+            {t("welcome")}
           </p>
           <TypewriterEffect words={words} />
           <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 space-x-0 md:space-x-4 mt-10">
@@ -44,7 +48,7 @@ export const Home = () => {
                 as="button"
                 className="bg-black text-white w-40"
               >
-                <span>Download CV</span>
+                <span>{t("download")}</span>
               </HoverBorderGradient>
             </Link>
             <Link href={"mailto:floydrise@gmail.com"}>
@@ -53,7 +57,7 @@ export const Home = () => {
                 as="button"
                 className="bg-indigo-50 w-40 text-black"
               >
-                <span>Contact me</span>
+                <span>{t("contact")}</span>
               </HoverBorderGradient>
             </Link>
           </div>

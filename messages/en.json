@@ -1,0 +1,68 @@
+{
+  "Navigation": {
+    "navigation": "Nav",
+    "home": "Home",
+    "experience": "Experience",
+    "skills": "Skills",
+    "projects": "Projects",
+    "socials": "Socials",
+    "email": "Email",
+    "theme": "Theme",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System",
+    "language": "Lang",
+    "bulgarian": "Bulgarian",
+    "english": "English"
+  },
+  "Home": {
+    "welcome": "Hi \uD83D\uDC4B\uD83C\uDFFB, I am Stefan\uFE0F \uD83D\uDC40",
+    "and": "and",
+    "developer": "developer",
+    "download": "Download CV",
+    "contact": "Contact me"
+  },
+  "Experience": {
+    "title": "Experience / Education",
+    "northcoders": {
+      "badge": "Northcoders, UK",
+      "title": "Trainee Software Developer",
+      "dates": "Oct 2024 - Jan 2025",
+      "description": {
+        "first": "13 week programming bootcamp, learning the fundamentals necessary for front end and back end development, testing and hosting.",
+        "second": "Collaborated with colleagues on developing projects, utilising Test Driven Development and pair programming."
+      }
+    },
+    "film": {
+      "badge": "Film and TV Extra, UK",
+      "title": "Supporting artist",
+      "dates": "Jun 2021 - August 2024",
+      "description": {
+        "first": "Play non-speaking roles in film and television productions.",
+        "second": "Appear in the background of scenes to create a realistic environment, such as crowd members, diners in a restaurant, or passersby on a busy street."
+      }
+    },
+    "uni": {
+      "badge": "BIMM University, UK",
+      "title": "Certificate of Higher Education",
+      "dates": "Oct 2018 - May 2020",
+      "description": {
+        "first": "Completed two years of studies, focusing on recording, performance and mixing and achieving a Certificate of Higher Education."
+      }
+    },
+    "school": {
+      "badge": "Mathematics and science high school, Bulgaria",
+      "title": "High school diploma",
+      "dates": "Sept 2013 - May 2018",
+      "description": {
+        "first": "Focused on mathematics and science, building a strong analytical and problem-solving foundation."
+      }
+    }
+  },
+  "Skills": {
+    "title": "Skills"
+  },
+  "Projects": {
+    "title": "Projects"
+  }
+}
