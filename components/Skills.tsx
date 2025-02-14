@@ -8,8 +8,11 @@ import {
 } from "react-icons/tb";
 import { SiExpress } from "react-icons/si";
 import { BiLogoPostgresql } from "react-icons/bi";
+import {getTranslations} from "next-intl/server";
 
-export const Skills = () => {
+export const Skills = async () => {
+  const t = await getTranslations("Skills")
+
   const skillCards = [
     {
       skill: "TypeScript",
@@ -46,7 +49,7 @@ export const Skills = () => {
             "px-4 md:px-0 pt-20 text-2xl font-bold dark:text-white md:pt-28 md:text-7xl"
           }
         >
-          Skills
+          {t("title")}
         </h1>
       </div>
       <div

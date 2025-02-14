@@ -9,7 +9,6 @@ import { MdEmail } from "react-icons/md";
 import {SunIcon, MoonIcon, BeakerIcon} from "@heroicons/react/24/outline";
 import {useTheme} from "next-themes";
 import {useTranslations} from "use-intl";
-import {GiBulgaria} from "react-icons/gi";
 
 export default function Navbar({ className }: { className?: string }) {
   const [active, setActive] = useState<string | null>(null);
