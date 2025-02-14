@@ -22,9 +22,8 @@ export default async function RootLayout({
   params,
 }: {
   children: React.ReactNode;
-  params: { locale: "en" | "bg" };
+  params: Promise<{ locale: "en" | "bg" }>;
 }) {
-
   const { locale } = await params;
 
   if (!routing.locales.includes(locale)) {
