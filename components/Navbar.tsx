@@ -9,21 +9,23 @@ import { MdEmail } from "react-icons/md";
 import {SunIcon, MoonIcon, BeakerIcon} from "@heroicons/react/24/outline";
 import {useTheme} from "next-themes";
 import {useTranslations} from "use-intl";
+import {useParams} from "next/navigation";
 
 export default function Navbar({ className }: { className?: string }) {
   const [active, setActive] = useState<string | null>(null);
   const {setTheme} = useTheme();
   const t = useTranslations('Navigation');
+  const {locale} = useParams();
 
   return (
     <div className={cn("fixed top-10 inset-x-0 w-80 mx-auto z-50", className)}>
       <Menu setActive={setActive}>
         <MenuItem setActive={setActive} active={active} item={t("navigation")}>
           <div className="flex flex-col space-y-4 text-sm">
-            <HoveredLink href="/#home">{t("home")}</HoveredLink>
-            <HoveredLink href="/#experience">{t("experience")}</HoveredLink>
-            <HoveredLink href="/#skills">{t("skills")}</HoveredLink>
-            <HoveredLink href="/#projects">{t("projects")}</HoveredLink>
+            <HoveredLink href={`/${locale}/#home`}>{t("home")}</HoveredLink>
+            <HoveredLink href={`/${locale}/#experience`}>{t("experience")}</HoveredLink>
+            <HoveredLink href={`/${locale}/#skills`}>{t("skills")}</HoveredLink>
+            <HoveredLink href={`/${locale}/#projects`}>{t("projects")}</HoveredLink>
           </div>
         </MenuItem>
         <MenuItem setActive={setActive} active={active} item={t("socials")}>

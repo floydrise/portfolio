@@ -5,10 +5,10 @@ import { Button } from "@/components/ui/moving-border";
 import { ArrowDownIcon } from "@heroicons/react/24/outline";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import React from "react";
-import {getTranslations} from "next-intl/server";
+import { getTranslations } from "next-intl/server";
 
-export const Home = async () => {
-  const t = await getTranslations('Home');
+export const Home = async ({ locale }: { locale: "en" | "bg" }) => {
+  const t = await getTranslations("Home");
 
   const words = [
     {
@@ -25,7 +25,6 @@ export const Home = async () => {
       className: "text-violet-500 dark:text-violet-400",
     },
   ];
-
 
   return (
     <>
@@ -62,7 +61,7 @@ export const Home = async () => {
             </Link>
           </div>
           <div className={"mt-10"}>
-            <Link href={"/#experience"}>
+            <Link href={`/${locale}/#experience`}>
               <Button
                 borderRadius="1.75rem"
                 className="bg-slate-100 dark:bg-black text-black dark:text-white border-neutral-200 dark:border-slate-800"
