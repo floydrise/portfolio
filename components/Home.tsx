@@ -60,7 +60,7 @@ export const Home = async ({ locale }: { locale: "en" | "bg" }) => {
               </HoverBorderGradient>
             </Link>
           </div>
-          <div className={"mt-10"}>
+          <div className={"mt-10 animate-bounce"}>
             <Link href={`/${locale}/#experience`}>
               <Button
                 borderRadius="1.75rem"

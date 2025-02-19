@@ -1,17 +1,17 @@
 "use client";
 
-import React, { useState } from "react";
-import { cn } from "@/lib/utils";
-import { HoveredLink, Menu, MenuItem } from "@/components/ui/navbar-menu";
-import { FaGithub } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa";
-import { MdEmail } from "react-icons/md";
+import React, {useState} from "react";
+import {cn} from "@/lib/utils";
+import {HoveredLink, Menu, MenuItem} from "@/components/ui/navbar-menu";
+import {FaGithub} from "react-icons/fa";
+import {FaLinkedin} from "react-icons/fa";
+import {MdEmail} from "react-icons/md";
 import {SunIcon, MoonIcon, BeakerIcon} from "@heroicons/react/24/outline";
 import {useTheme} from "next-themes";
 import {useTranslations} from "use-intl";
 import {useParams} from "next/navigation";
 
-export default function Navbar({ className }: { className?: string }) {
+export default function Navbar({className}: { className?: string }) {
   const [active, setActive] = useState<string | null>(null);
   const {setTheme} = useTheme();
   const t = useTranslations('Navigation');
@@ -35,7 +35,7 @@ export default function Navbar({ className }: { className?: string }) {
               target={"_blank"}
               className={"flex gap-1 items-center"}
             >
-              <FaGithub />
+              <FaGithub/>
               GitHub
             </a>
             <a
@@ -43,14 +43,14 @@ export default function Navbar({ className }: { className?: string }) {
               target={"_blank"}
               className={"flex gap-1 items-center"}
             >
-              <FaLinkedin />
+              <FaLinkedin/>
               LinkedIn
             </a>
             <a
               href={"mailto:floydrise@gmail.com"}
               className={"flex gap-1 items-center"}
             >
-              <MdEmail />
+              <MdEmail/>
               Email
             </a>
           </div>
@@ -63,7 +63,7 @@ export default function Navbar({ className }: { className?: string }) {
                 setTheme("light");
               }}
             >
-              <SunIcon className={"w-4 text-yellow-500"} /> {t("light")}
+              <SunIcon className={"w-4 text-yellow-500"}/> {t("light")}
             </button>
             <button
               className={"flex gap-1 items-center"}
@@ -71,7 +71,7 @@ export default function Navbar({ className }: { className?: string }) {
                 setTheme("dark");
               }}
             >
-              <MoonIcon className={"w-4 text-blue-500"} /> {t("dark")}
+              <MoonIcon className={"w-4 text-blue-500"}/> {t("dark")}
             </button>
             <button
               className={"flex gap-1 items-center"}
@@ -79,7 +79,7 @@ export default function Navbar({ className }: { className?: string }) {
                 setTheme("system");
               }}
             >
-              <BeakerIcon className={"w-4 text-green-500"} /> {t("system")}
+              <BeakerIcon className={"w-4 text-green-500"}/> {t("system")}
             </button>
           </div>
         </MenuItem>
